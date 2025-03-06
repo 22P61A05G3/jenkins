@@ -12,8 +12,8 @@ pipeline {
                 sh '''
                 #!/bin/sh
                 rm -rf flask-app
-                git clone https://github.com/yourusername/flask-app.git
-                cd flask-app
+                git clone https://github.com/drsaab1313/web-crud.git
+                cd web-crud
                 '''
             }
         }
@@ -22,8 +22,8 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/sh
-                python3 -m venv ${VENV_DIR}  # Create virtual environment
-                . ${VENV_DIR}/bin/activate  # Activate virtual environment
+                python3 -m venv venv  # Create virtual environment
+                . venv/bin/activate  # Activate virtual environment
                 pip install flask  # Install Flask
                 '''
             }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/sh
-                . ${VENV_DIR}/bin/activate
+                . venv/bin/activate
                 python app.py &
                 '''
             }
