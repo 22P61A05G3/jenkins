@@ -15,8 +15,8 @@ pipeline {
         stage('Run'){
             steps{
                 script{
-                    //bat "python3 reg.py"
-                    bat "python -version"
+                    //bat "python reg.py"
+                    bat "python --version"
                 }
             }
             
