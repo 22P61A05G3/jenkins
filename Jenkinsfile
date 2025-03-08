@@ -8,9 +8,14 @@ pipeline {
                 script {
                     // Using double quotes for the outer string
                     bat "echo Hello World"
-                    bat "whoami"
+                    //bat "whoami"
                 }
             }
+        stage('Run'){
+            script{
+                bat python reg.py
+            }
+        }
         }
     }
 }
