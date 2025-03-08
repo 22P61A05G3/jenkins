@@ -11,11 +11,14 @@ pipeline {
                     //bat "whoami"
                 }
             }
-        stage('Run'){
-            script{
-                bat python reg.py
-            }
         }
+        stage('Run'){
+            steps{
+                script{
+                    bat python reg.py
+                }
+            }
+            
         }
     }
 }
