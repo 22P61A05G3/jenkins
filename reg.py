@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-import os 
 
 app = Flask(__name__)
 
@@ -15,6 +14,5 @@ def submit():
     return render_template("result.html", name=name, email=email, age=age)
 
 if __name__ == '__main__':
-    debug_mode = os.getenv('FLASK_ENV') != 'production'  # Disable debug if running in production
-    app.run(debug=debug_mode)
+    app.run(debug=True)
     
