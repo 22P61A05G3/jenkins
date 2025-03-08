@@ -15,9 +15,8 @@ pipeline {
         stage('Run'){
             steps{
                 script{
-                    //bat "python reg.py" 
-                    bat '"C:\\Users\\AL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" reg.py'
-                    //bat "python --version"
+                    //bat '"C:\\Users\\AL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" reg.py'
+                    bat '"C:\\Users\\AL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m flask run --no-debugger'
                 }
             }
             
