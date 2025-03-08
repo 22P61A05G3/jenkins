@@ -16,7 +16,7 @@ pipeline {
             steps{
                 script{
                     //bat '"C:\\Users\\AL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" reg.py'
-                    bat 'set FLASK_ENV=production && "C:\\Users\\AL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" reg.py'
+                    bat 'set FLASK_ENV=0 && "C:\\Users\\AL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" reg.py'
                 }
             }
             
