@@ -17,4 +17,4 @@ def submit():
 if __name__ == '__main__':
     debug_mode = os.getenv('FLASK_ENV') != 'production'  # Disable debug if running in production
     app.run(debug=debug_mode)
-    '''app.run(debug=True)
+    
