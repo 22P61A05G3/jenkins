@@ -18,10 +18,11 @@ pipeline {
         stage('Setup Python Environment') {
             steps {
                 script {
-                    // Upgrade pip and install dependencies
                     bat "\"%PYTHON_EXE%\" -m pip install --upgrade pip"
                     bat "\"%PYTHON_EXE%\" -m pip install --force-reinstall markupsafe"
-                    bat "\"%PYTHON_EXE%\" -m pip install -r requirements.txt"
+
+                    // Check if requirements.txt exists before running pip install
+                    bat "if exist requirements.txt (\"%PYTHON_EXE%\" -m pip install -r requirements.txt) else (echo requirements.txt not found, skipping)"
                 }
             }
         }
